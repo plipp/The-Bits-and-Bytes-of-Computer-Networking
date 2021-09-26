@@ -1,8 +1,10 @@
 *  The Network Layer
 ---------------------
 
--> In LAN - nodes can communicate with each other through their physical MAC addressses - works well on small scale and switches can learn the MAC addresses connected to each other port to forward transmission;
--> Every single network interface has a unique MAC address and are not ordered in a systematic way, hence no way of knowing the location of MAC address at any point of time - not ideal for communicating long distances;
+-> In LAN - nodes can communicate with each other through their physical MAC addressses - works well on small scale and switches 
+   can learn the MAC addresses connected to each other port to forward transmission;
+-> Every single network interface has a unique MAC address and are not ordered in a systematic way, hence no way of 
+   knowing the location of MAC address at any point of time - not ideal for communicating long distances;
 - The nodes learn about each other through physical addressing that isn't translatable to anything besides a single network signet;
 - An alternate solution is the IP;
 
@@ -12,13 +14,20 @@
 -> IP addresses are 32-bit long numbers made up of 4 octets, and each octet is described in decimal numbers.
     172.16.254.1   -> 10101100 . 00010000 . 11111110 . 00000001  -> 4 bytes - 32 bits; (0-255) -> Dotted Decimal Notation;
 
--> IP Addresses are distributed in large sections to various organizations and companies instead of being determined by hardware vendors - IP addresses are more hierarchical and easier to store data than physical addresses;
+-> IP Addresses are distributed in large sections to various organizations and companies 
+   instead of being determined by hardware vendors 
+   - IP addresses are more hierarchical and easier to store data than physical addresses;
 -> IP addresses belong to networks, not to devices attached to those networks;
--> A Laptop will have the same MAC address whereever it is by an IP address will differ - home network, cafe network, etc, the LAN at a home network or internet cafe will each be individually responsible to handing out an IP address;
+-> A Laptop will have the same MAC address whereever it is by an IP address will differ 
+   - home network, cafe network, etc, the LAN at a home network or internet cafe will each be 
+   individually responsible to handing out an IP address;
 
--> Dynamic Host Configuration Protocol (DHCP) - enables to add a new host to the network, or add an IP addressto a host newly added to the network - this is termed as Dynamic IP Address; The other alternative is Static IP Address(Configured on a node manually);
+-> Dynamic Host Configuration Protocol (DHCP) - enables to add a new host to the network, 
+   or add an IP addressto a host newly added to the network - this is termed as Dynamic IP Address; 
+   The other alternative is Static IP Address(Configured on a node manually);
 
--> In most cases, static IP addresses are reserved for servers and network devices, while dynamic IP addresses are reserved for clients;
+-> In most cases, static IP addresses are reserved for servers and network devices, 
+   while dynamic IP addresses are reserved for clients;
 
 * IP Datagram and Encapsulation
 -----------------------------------
@@ -103,8 +112,12 @@ Each layer is needed for the one above it;
 -> Most network connected devices while retaining local ARP table;
 -> ARP table - A list of IP Addresses and the MAC addresses associated with them;
 
--> The IP datagram once fully formed needs to be encapsulated inside an Ethernet frame, hence the transmitting device needs a destination MAC address to complete the Ethernet frame header;
--> Using the data in the ARP table the destination MAC address is seeked or else the transmitting device sends a broadcast ARP message to the MAC broadcast address which is FF:FF:FF:FF:FF:FF - these are delivered to all computers on a local network and the respective network interface sends a ARP response - that contains the MAC address for the network interface;
+-> The IP datagram once fully formed needs to be encapsulated inside an Ethernet frame, 
+   hence the transmitting device needs a destination MAC address to complete the Ethernet frame header;
+-> Using the data in the ARP table the destination MAC address is seeked or 
+   else the transmitting device sends a broadcast ARP message to the MAC broadcast address which is FF:FF:FF:FF:FF:FF 
+   - these are delivered to all computers on a local network and the respective network interface sends a ARP response 
+   - that contains the MAC address for the network interface;
 
 -> ARP table entries generally expire after short amount of time to ensure changes in the network are accounted;
 -----------------------------------------------------------------------------------------------------------------------------------
